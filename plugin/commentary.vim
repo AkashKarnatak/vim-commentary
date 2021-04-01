@@ -105,15 +105,15 @@ onoremap <silent> <Plug>Commentary        :<C-U>call <SID>textobject(get(v:, 'op
 nnoremap <silent> <Plug>ChangeCommentary c:<C-U>call <SID>textobject(1)<CR>
 nmap <silent> <Plug>CommentaryUndo :echoerr "Change your <Plug>CommentaryUndo map to <Plug>Commentary<Plug>Commentary"<CR>
 
-if !hasmapto('<Plug>Commentary') || maparg('gc','n') ==# ''
-  xmap gc  <Plug>Commentary
-  nmap gc  <Plug>Commentary
-  omap gc  <Plug>Commentary
-  nmap gcc <Plug>CommentaryLine
-  if maparg('c','n') ==# '' && !exists('v:operator')
-    nmap cgc <Plug>ChangeCommentary
-  endif
-  nmap gcu <Plug>Commentary<Plug>Commentary
+if !hasmapto('<Plug>Commentary') || maparg('cm','n') ==# ''
+  xmap cm  <Plug>Commentary
+  nmap cm  <Plug>Commentary
+  omap cm  <Plug>Commentary
+  nmap cmm <Plug>CommentaryLine
+  " if maparg('c','n') ==# '' && !exists('v:operator')
+  "   nmap cgc <Plug>ChangeCommentary
+  " endif
+  nmap cmu <Plug>Commentary<Plug>Commentary
 endif
 
 " vim:set et sw=2:
